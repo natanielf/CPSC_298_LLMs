@@ -15,6 +15,9 @@ type Expense = {
 };
 
 export default function AutoExpenseTracker() {
+  useEffect(() => {
+    document.body.className = theme === "light" ? "light" : "dark";
+  }, [theme]);
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
