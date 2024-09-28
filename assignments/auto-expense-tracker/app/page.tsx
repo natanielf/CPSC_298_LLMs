@@ -130,6 +130,20 @@ export default function AutoExpenseTracker() {
           <p className="text-2xl font-bold">${totalExpenses.toFixed(2)}</p>
         </CardContent>
       </Card>
-    </div>
+
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Theme</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex justify-center">
+            <Label>Theme</Label>
+            <select value={theme} onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+        </CardContent>
+      </Card>
   )
 }
