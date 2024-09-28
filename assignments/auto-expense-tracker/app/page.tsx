@@ -54,18 +54,6 @@ export default function AutoExpenseTracker() {
 
   return (
     <div className="container mx-auto p-4">
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>Theme</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div>
-            <Label>Theme</Label>
-            <select value={theme} onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
 
       <Card className="mb-6">
         <CardHeader>
