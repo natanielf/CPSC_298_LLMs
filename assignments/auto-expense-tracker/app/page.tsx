@@ -52,8 +52,8 @@ export default function AutoExpenseTracker() {
 
   const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0)
 
-  return (
-    <div className="container mx-auto p-4">
+    return (
+      <div className="container mx-auto p-4">
 
       <Card className="mb-6">
         <CardHeader>
