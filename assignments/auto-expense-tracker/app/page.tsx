@@ -104,7 +104,7 @@ export default function AutoExpenseTracker() {
         <CardContent>
           <ul className="space-y-2">
             {expenses.map((expense) => (
-              <li key={expense.id} className="flex justify-between items-center border-b py-2">
+              <li key={expense.id} className={"flex justify-between items-center border-b py-2"}>
                 <div>
                   <span className="font-semibold">{expense.date}</span> - {expense.description}
                 </div>
