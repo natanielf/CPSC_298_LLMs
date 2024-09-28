@@ -1,58 +1,62 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { PlusIcon, TrashIcon } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PlusIcon, TrashIcon } from "lucide-react";
 
 type Expense = {
-  id: string
-  date: string
-  description: string
-  amount: number
-}
+  id: string;
+  date: string;
+  description: string;
+  amount: number;
+};
 
 export default function AutoExpenseTracker() {
-  const [expenses, setExpenses] = useState<Expense[]>([])
-  const [date, setDate] = useState('')
-  const [description, setDescription] = useState('')
-  const [amount, setAmount] = useState('')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [date, setDate] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const storedExpenses = localStorage.getItem('autoExpenses')
+    const storedExpenses = localStorage.getItem("autoExpenses");
     if (storedExpenses) {
-      setExpenses(JSON.parse(storedExpenses))
+      setExpenses(JSON.parse(storedExpenses));
     }
-  }, [])
+  }, []);
 
   const addExpense = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const newExpense: Expense = {
       id: Date.now().toString(),
       date,
       description,
-      amount: parseFloat(amount)
-    }
-    const updatedExpenses = [...expenses, newExpense]
-    setExpenses(updatedExpenses)
-    localStorage.setItem('autoExpenses', JSON.stringify(updatedExpenses))
-    setDate('')
-    setDescription('')
-    setAmount('')
-  }
+      amount: parseFloat(amount),
+    };
+    const updatedExpenses = [...expenses, newExpense];
+    setExpenses(updatedExpenses);
+    localStorage.setItem("autoExpenses", JSON.stringify(updatedExpenses));
+    setDate("");
+    setDescription("");
+    setAmount("");
+  };
 
   const deleteExpense = (id: string) => {
-    const updatedExpenses = expenses.filter(expense => expense.id !== id)
-    setExpenses(updatedExpenses)
-    localStorage.setItem('autoExpenses', JSON.stringify(updatedExpenses))
-  }
+    const updatedExpenses = expenses.filter((expense) => expense.id !== id);
+    setExpenses(updatedExpenses);
+    localStorage.setItem("autoExpenses", JSON.stringify(updatedExpenses));
+  };
 
-  const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0)
+  const totalExpenses = expenses.reduce(
+    (sum, expense) => sum + expense.amount,
+    0
+  );
 
-    return (
+  return (
+    <>
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Add New Expense</CardTitle>
@@ -96,7 +100,6 @@ export default function AutoExpenseTracker() {
           </form>
         </CardContent>
       </Card>
-
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Expense List</CardTitle>
@@ -104,13 +107,21 @@ export default function AutoExpenseTracker() {
         <CardContent>
           <ul className="space-y-2">
             {expenses.map((expense) => (
-              <li key={expense.id} className={"flex justify-between items-center border-b py-2"}>
+              <li
+                key={expense.id}
+                className="flex justify-between items-center border-b py-2"
+              >
                 <div>
-                  <span className="font-semibold">{expense.date}</span> - {expense.description}
+                  <span className="font-semibold">{expense.date}</span> -{" "}
+                  {expense.description}
                 </div>
                 <div className="flex items-center">
                   <span className="mr-4">${expense.amount.toFixed(2)}</span>
-                  <Button variant="destructive" size="icon" onClick={() => deleteExpense(expense.id)}>
+                  <Button
+                    variant="destructive"
+                    size="icon"
+                    onClick={() => deleteExpense(expense.id)}
+                  >
                     <TrashIcon className="h-4 w-4" />
                   </Button>
                 </div>
@@ -119,7 +130,6 @@ export default function AutoExpenseTracker() {
           </ul>
         </CardContent>
       </Card>
-
       <Card>
         <CardHeader>
           <CardTitle>Total Expenses</CardTitle>
@@ -128,7 +138,6 @@ export default function AutoExpenseTracker() {
           <p className="text-2xl font-bold">${totalExpenses.toFixed(2)}</p>
         </CardContent>
       </Card>
-
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Theme</CardTitle>
@@ -136,12 +145,16 @@ export default function AutoExpenseTracker() {
         <CardContent>
           <div className="flex justify-center">
             <Label>Theme</Label>
-            <select value={theme} onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}>
+            <select
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as "light" | "dark")}
+            >
               <option value="light">Light</option>
               <option value="dark">Dark</option>
             </select>
           </div>
         </CardContent>
       </Card>
-  )
+    </>
+  );
 }
