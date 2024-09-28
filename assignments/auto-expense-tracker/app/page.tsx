@@ -23,7 +23,6 @@ export default function AutoExpenseTracker() {
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
-  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const storedExpenses = localStorage.getItem("autoExpenses");
@@ -146,7 +145,7 @@ export default function AutoExpenseTracker() {
         <CardHeader>
           <CardTitle>Theme</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-4">
           <div className="flex justify-center">
             <Label>Theme</Label>
             <select
