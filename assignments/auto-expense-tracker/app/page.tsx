@@ -19,6 +19,7 @@ export default function AutoExpenseTracker() {
   const [date, setDate] = useState('')
   const [description, setDescription] = useState('')
   const [amount, setAmount] = useState('')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     const storedExpenses = localStorage.getItem('autoExpenses')
@@ -53,7 +54,18 @@ export default function AutoExpenseTracker() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Auto Expense Tracker</h1>
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Theme</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div>
+            <Label>Theme</Label>
+            <select value={theme} onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
 
       <Card className="mb-6">
         <CardHeader>
