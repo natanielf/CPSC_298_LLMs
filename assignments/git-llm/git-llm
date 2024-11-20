@@ -1,0 +1,22 @@
+#!/bin/sh
+
+diffs=$(git diff --staged)
+
+commit_msg=$(echo "$diffs" | uv run llm -t git_commit_message)
+
+echo "Would you like to commit staged changes using the following message?"
+echo "$commit_msg"
+
+select confirm in "Yes" "No"
+do
+    if [ "$confirm" = "Yes" ]
+    then
+        echo "Committing staged changes..."
+        git commit -m "$commit_msg"
+        echo "Changes successfully committed."
+        break
+    else
+        echo "Staged changes will not be committed."
+        break
+    fi
+done
