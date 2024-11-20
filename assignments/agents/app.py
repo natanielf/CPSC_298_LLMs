@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from beehive import Beehive, BeehiveAgent, FixedExecution
-from openai import OpenAIModel
+from beehive.invokable.agent import BeehiveAgent
+from beehive.models.openai_model import OpenAIModel
 
 
 def main():
