@@ -1,8 +1,30 @@
-# Agentic AI
+# Agentic AI Project
 
-Yellow group.
+A project that uses Microsoft AutoGen and allows AI agents to make clothing and activity recommendations to a user based on the weather conditions at their current location.
+
+## Dependencies
+
+- `autogen`
+- `dotenv`
+- `flaml[automl]`
+
+## Configuration
+
+Paste Groq API key in the `.env` file:
+
+```
+GROQ_API_KEY=...
+```
+
+## Execution
+
+```sh
+python3 main.py
+```
 
 ## Authors
+
+We are the yellow group.
 
 - Nataniel Farzan
 - Ben Fellows
@@ -10,3 +32,9 @@ Yellow group.
 - Jonathan Vergonio
 - Ryan Jewik
 - Shuntaro Abe
+
+## References
+
+- https://github.com/microsoft/autogen
+- https://microsoft.github.io/autogen/0.2/docs/tutorial/tool-use
+- https://github.com/chubin/wttr.in
