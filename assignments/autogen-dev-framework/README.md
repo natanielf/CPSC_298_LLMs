@@ -6,6 +6,15 @@ A sophisticated multi-agent development framework built on AutoGen that automate
 ![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![AutoGen 0.4](https://img.shields.io/badge/AutoGen-0.4-green.svg)
 
+## Authors
+
+- Nataniel Farzan (Lead)
+- Drew Floyd (Product Owner)
+- Jonathan Vergonio (QA)
+- Ryan Jewik (Dev)
+- Ben Fellows (Dev)
+- Jennifer Merida (Dev)
+
 ## 🌟 Features
 
 - **Automated Development Pipeline**: End-to-end software development automation
