@@ -5,7 +5,7 @@ A project that uses Microsoft AutoGen and allows AI agents to make clothing and 
 ## Dependencies
 
 - `autogen`
-- `dotenv`
+- `python-dotenv`
 - `flaml[automl]`
 
 ## Configuration
@@ -38,3 +38,4 @@ We are the yellow group.
 - https://github.com/microsoft/autogen
 - https://microsoft.github.io/autogen/0.2/docs/tutorial/tool-use
 - https://github.com/chubin/wttr.in
+- https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/
