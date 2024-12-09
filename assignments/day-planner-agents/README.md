@@ -15,9 +15,15 @@ A project that uses Microsoft AutoGen and allows AI agents to make clothing, act
 - `python-dotenv`
 - `flaml[automl]`
 
+Install dependencies:
+
+```sh
+pip install -r requirements.txt
+```
+
 ## Configuration
 
-Paste Groq API key in the `.env` file:
+Paste your [Groq](https://groq.com/) API key in the `.env` file:
 
 ```
 GROQ_API_KEY=...
