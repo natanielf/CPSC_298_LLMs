@@ -33,12 +33,12 @@ python3 main.py
 
 We are the yellow group.
 
-- Nataniel Farzan
-- Ben Fellows
-- Drew Floyd
-- Jonathan Vergonio
-- Ryan Jewik
-- Shuntaro Abe
+- Nataniel Farzan (Lead)
+- Drew Floyd (Product Owner)
+- Jonathan Vergonio (QA)
+- Ben Fellows (Dev)
+- Ryan Jewik (Dev)
+- Shuntaro Abe (Dev)
 
 ## References
 
