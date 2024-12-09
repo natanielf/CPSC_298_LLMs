@@ -6,8 +6,7 @@ import requests
 WEATHER_API_URL = "https://wttr.in"
 
 GET_STATE_DESC = """
-A function that returns the current weather conditions, location, and date
- based on the IP address of the user.
+A function that returns the current weather conditions, location, and date.
 """
 
 
@@ -26,11 +25,11 @@ def get_state() -> Annotated[dict, GET_STATE_DESC]:
     country = area["country"][0]["value"]
     datetime = current_conditions["localObsDateTime"]
     location = f"{city}, {region}, {country}"
-    weather_info = {
+    state = {
         "temp_fahrenheit": current_conditions["temp_F"],
         "precipitation_inches": current_conditions["precipInches"],
         "description": current_conditions["weatherDesc"][0]["value"],
         "location": location,
         "datetime": datetime,
     }
-    return weather_info
+    return state

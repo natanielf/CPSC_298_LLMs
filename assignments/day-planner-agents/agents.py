@@ -11,7 +11,7 @@ load_dotenv()
 # API config
 CONFIG_LIST = [
     {
-        "model": "llama3-8b-8192",
+        "model": "llama3-70b-8192",
         "base_url": "https://api.groq.com/openai/v1/",
         "api_key": os.getenv("GROQ_API_KEY"),
     }
@@ -33,7 +33,7 @@ class ClothingAssistant(AssistantAgent):
             system_message=system_message,
             llm_config=LLM_CONFIG,
             human_input_mode="NEVER",
-            max_consecutive_auto_reply=2,
+            max_consecutive_auto_reply=3,
         )
         self.register_for_llm(
             description=GET_STATE_DESC,
@@ -54,7 +54,7 @@ class ActivityAssistant(AssistantAgent):
             system_message=system_message,
             llm_config=LLM_CONFIG,
             human_input_mode="NEVER",
-            max_consecutive_auto_reply=2,
+            max_consecutive_auto_reply=3,
         )
         self.register_for_llm(
             description=GET_STATE_DESC,
@@ -66,16 +66,16 @@ class MealAssistant(AssistantAgent):
         name = "Meal assistant"
         system_message = """
         You are a helpful and friendly assistant that suggests relevant
-        cuisines and specific places to eat based on the provided location and
-        time of day. Provide at least three recommendations in a
-        bulleted list format.
+        cuisines and specific places to eat based on the provided location, time of day,
+        and current season. Provide at least three recommendations in a bulleted list
+        format.
         """
         super().__init__(
             name=name,
             system_message=system_message,
             llm_config=LLM_CONFIG,
             human_input_mode="NEVER",
-            max_consecutive_auto_reply=2,
+            max_consecutive_auto_reply=3,
         )
         self.register_for_llm(
             description=GET_STATE_DESC,
@@ -85,7 +85,9 @@ class MealAssistant(AssistantAgent):
 class UserProxy(UserProxyAgent):
     def __init__(self):
         name = "User proxy"
-        system_message = "A user looking for information about how to play their day."
+        system_message = """
+        You are someone looking for advice for planning their day.
+        """
         super().__init__(
             name=name,
             system_message=system_message,

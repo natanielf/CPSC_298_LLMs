@@ -2,6 +2,13 @@
 
 A project that uses Microsoft AutoGen and allows AI agents to make clothing, activity, and meal recommendations to a user based on the weather conditions at their current location.
 
+## Agents
+
+- `ClothingAssistant`
+- `ActivityAssistant`
+- `MealAssistant`
+- `UserProxy`
+
 ## Dependencies
 
 - `autogen`
