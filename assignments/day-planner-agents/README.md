@@ -4,10 +4,29 @@ A project that uses Microsoft AutoGen and allows AI agents to make clothing, act
 
 ## Agents
 
-- `ClothingAssistant`
-- `ActivityAssistant`
-- `MealAssistant`
-- `UserProxy`
+### ClothingAssistant
+- **Purpose:** Suggests relevant clothing items based on current weather conditions.
+- **Functionality:**
+  - Provides at least three clothing recommendations in a bulleted list.
+  - Analyzes weather data and generates suggestions without human input.
+
+### ActivityAssistant
+- **Purpose:** Recommends activities based on current weather and nearby attractions.
+- **Functionality:**
+  - Provides at least three activity recommendations in a bulleted list.
+  - Considers weather conditions and local points in location.
+
+### MealAssistant
+- **Purpose:** Offers meal recommendations based on location, time of day, and season.
+- **Functionality:**
+  - Suggests at least three cuisines or dining spots in a bulleted list.
+  - Leverages time and seasonal preferences.
+
+### UserProxy
+- **Purpose:** Simulates the user seeking advice for planning their day.
+- **Functionality:**
+  - Acts as a bridge to provide inputs and retrieve responses from the assistant agents.
+  - Operates autonomously with minimal human interaction.
 
 ## Dependencies
 
@@ -44,7 +63,6 @@ We are the yellow group.
 - Jonathan Vergonio (QA)
 - Ben Fellows (Dev)
 - Ryan Jewik (Dev)
-- Shuntaro Abe (Dev)
 
 ## References
 
