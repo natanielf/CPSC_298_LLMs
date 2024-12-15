@@ -13,11 +13,12 @@ CONFIG_LIST = [
     {
         "model": "llama3-70b-8192",
         "base_url": "https://api.groq.com/openai/v1/",
-        "api_key": os.getenv("GROQ_API_KEY"),
+        "api_key": "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",
     }
 ]
 
 LLM_CONFIG = {"config_list": CONFIG_LIST}
+
 
 
 class ClothingAssistant(AssistantAgent):
@@ -38,6 +39,7 @@ class ClothingAssistant(AssistantAgent):
         self.register_for_llm(
             description=GET_STATE_DESC,
         )(get_state)
+    
 
 
 class ActivityAssistant(AssistantAgent):
