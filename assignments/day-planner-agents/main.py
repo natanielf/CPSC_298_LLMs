@@ -25,8 +25,8 @@ def get_conversation():
     log_conversation('Activity Assistant', user_proxy.initiate_chat(activity_assistant, message="What should I do today?").chat_history[3]['content'])
 
     
-    log_conversation('User', "Where should I eat?")
-    log_conversation('Meal Assistant', user_proxy.initiate_chat(meal_assistant, message="Where should I eat?").chat_history[3]['content'])
+    log_conversation('User', "Where should I eat today?")
+    log_conversation('Meal Assistant', user_proxy.initiate_chat(meal_assistant, message="Where should I eat today?").chat_history[3]['content'])
 
     return conversation
 
