@@ -1,7 +1,7 @@
 # Configuration settings for the project
 
 # API key for OpenWeatherMap
-OPENWEATHERMAP_API_KEY = 'your_api_key_here'
+OPENWEATHERMAP_API_KEY = ''
 
 # Database configuration
 DATABASE_URL = 'postgresql://user:password@localhost:5432/mydatabase'
